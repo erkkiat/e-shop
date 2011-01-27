@@ -21,7 +21,7 @@ class Product(models.Model):
     active = models.BooleanField(default=True)
       
     # Manufacturer of the product
-    manufacturer = models.ForeignKey(Manufacturer, required=False)
+    manufacturer = models.ForeignKey(Manufacturer, null=True)
 
     # A one sentence description of the product
     short_description = models.CharField(max_length=100)
@@ -36,7 +36,7 @@ class Product(models.Model):
     currency = models.ForeignKey(Currency)
 
     # A picture of the product
-    image = models.ImageField(required=False)
+    #image = models.ImageField(null=True, upload_to='images')
     # See http://docs.djangoproject.com/en/dev/ref/models/fields/#imagefield
 
     def __unicode__(self):
@@ -51,7 +51,7 @@ class Category(models.Model):
     description = models.CharField(max_length=100)
 
     # If there is a hierarchy for categories, define parent for this category
-    parent = models.ForeignKey('Category', required=False)
+    parent = models.ForeignKey('Category', null=True)
 
 class Cart(models.Model):
     """The shopping cart which contains the products the user has chosen"""
