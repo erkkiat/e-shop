@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<head>
+	<script type="text/javascript" src="/mediafiles/js/jquery-1.4.4.js"></script>
+ 	<script type="text/javascript" src="/mediafiles/js/jquery-ui-1.8.9.custom.min.js"></script>
+ 	<link type="text/css" href="/mediafiles/css/sunny/jquery-ui-1.8.9.custom.css" rel="Stylesheet" />
+    <link type="text/css" rel="stylesheet" href="/mediafiles/css/style.css" />
+    <title>{% block title %}e-shop{% endblock %}</title>
+{% block head-insert %}{% endblock %}
+</head>
+</head>
+
+<body>
+	{% block content %}
+		This is the base.html. Please do not use directly, 
+		but only for inheritance.
+	{% endblock %}
+</body>
+
+</html> 

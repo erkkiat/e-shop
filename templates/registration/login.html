@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+
+{% block head-insert %}
+	<script>
+	$(function() {	
+		$( "#dialog-modal" ).dialog({
+			height: 200,
+			width: 480,
+			modal: true
+		});
+	});
+	</script>
+{% endblock %}
+
+{% block content %}
+<div id="dialog-modal" title="Please provide your login credentials">
+{% if form.has_errors %}
+<p>Your username and password didn't match. Please try again.</p>
+{% endif %}
+
+<form method="post" action=".">{% csrf_token %}
+<table>
+<tr><td><label for="id_username">Username:</label></td><td>{{ form.username }}</td></tr>
+<tr><td><label for="id_password">Password:</label></td><td>{{ form.password }}</td></tr>
+</table>
+
+<input type="submit" value="login" />
+<input type="hidden" name="next" value="{{ next }}" />
+</form>
+</div>
+
+{% endblock %}
